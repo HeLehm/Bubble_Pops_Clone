@@ -311,6 +311,7 @@ public class GameManager : MonoBehaviour
 
         return 2048;
     }
+
     IEnumerator FiringballToOrigin(GameObject lasthit)
     {
         var lasthitzballscript = lasthit.GetComponent<BallScript>();
@@ -323,6 +324,8 @@ public class GameManager : MonoBehaviour
 
 
         lasthitzballscript.NumberValue = fireballscript.NumberValue;
+
+        Handheld.Vibrate();
 
         foreach (var nei in GetNeighbors(lasthit))
         {
